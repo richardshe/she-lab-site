@@ -349,3 +349,24 @@ body.research-page .hero-image{
 .hero-alt .hero-image{
   padding-top: 2.2rem;   /* tweak until visually centred */
 }
+
+
+/* ===== Mobile nav (no flicker) ===== */
+@media (max-width:768px){
+  #nav-toggle{display:block;}
+  .navbar-right nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:1.5rem;
+    background:var(--clr-dark);
+    border:1px solid rgba(255,255,255,1);
+    flex-direction:column;
+    gap:1.25rem;
+    padding:1rem 1.25rem;
+    z-index:100;
+  }
+  .navbar-right nav.open{
+    display:flex;
+  }
+}

@@ -12,6 +12,7 @@
     <div class="navbar-container">
       <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
       <div class="navbar-right">
+        <button id="nav-toggle" aria-label="Menu">☰</button>
         <nav>
           <a href="index.html">Research</a>
           <a href="people.html">People</a>
@@ -76,7 +77,12 @@
     <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
   </footer>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.querySelector('.navbar-right nav');
+if(navToggle && navMenu){
+  navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+}
+</script>
 </body>
 </html>
