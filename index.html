@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The She Lab – Brain Evolution</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The She Lab studies the genetic and developmental mechanisms that expanded the human brain.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The She Lab</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+      <div class="navbar-right">
+        <nav>
+          <a href="research.html">Research</a>
+          <a href="people.html">People</a>
+          <a href="publications.html">Publications</a>
+          <a href="join.html">Join The Lab</a>
+        </nav>
+        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- Remainder of the page content (hero sections, etc.) remains unchanged -->
+  <!-- We will copy this in from the last known good version of the index.html -->
+
+<main>
+    <!-- 01 Skull -->
+  <section class="hero hero-skull">
+     <div class="hero-image">
+       <img src="assets/images/skull_montage.png" alt="Human and chimpanzee skulls facing each other">
+     </div>
+     <div class="hero-content"><h1>How did evolution build a bigger brain?</h1>
+       <p>Elephants remember. Whales sing. Intelligence blossomed in a thousand specialized forms across the animal kingdom, with each species perfecting its own cognitive niche, hardwired for memory or navigation or song. But only humans possess the kind of cognition that builds civilizations and reaches for the stars. The secret lies in the human brain, which tripled in size over the past 7 million years. Our lab seeks to understand how and why this happened. As we stand at the dawn of machine intelligence, we look back into the past and ask: how did the original biological superintelligence on Earth evolve?</p>
+     </div>
+  </section>
+<!-- 02 Chimp -->
+  <section class="hero hero-chimp reverse">
+     <div class="hero-image">
+       <img src="assets/images/chimp.jpg" alt="Young chimpanzee in forest">
+     </div>
+     <div class="hero-content"><h2>What are the key genes in hominin evolution?</h2>
+       <p>Chimpanzees share over 98 % of our DNA. They are our closest living relatives and offer a unique window into what makes us human. Just as Jane Goodall pioneered the comparison of humans and chimps in the wild, we study their development in the lab, using stem cells instead of field notes. By differentiating these cells into cortical organoids, we can begin to trace how a few genetic changes reshaped the timing, scale, and circuitry of brain development and set our species on a different path.</p>
+     </div>
+  </section>
+
+  <!-- 03 Cas9 -->
+  <section class="hero hero-cas9">
+     <div class="hero-image">
+       <img src="assets/images/cas9.jpg" alt="Cas9 protein illustration binding DNA">
+     </div>
+     <div class="hero-content"><h2>Organoids + CRISPR screens</h2>
+       <p>We develop high‑throughput tools to map how genetic changes shape human brain development. Our core platform is a CRISPR screening system optimized for cortical organoids, enabling us to perturb thousands of genes in parallel and measure their effects on neural proliferation, fate, and maturation. Human brain expansion required precise regulation of developmental tempo and size: microcephaly leads to intellectual disability, while megalencephaly is linked to autism. Join us to understand how the same changes that gave rise to human intelligence predispose us to autism and other uniquely human vulnerabilities.</p>
+     </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+const navToggle=document.getElementById('nav-toggle');const navList=document.querySelector('.nav-list');navToggle.addEventListener('click',()=>navList.classList.toggle('open'));document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

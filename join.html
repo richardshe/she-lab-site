@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Us – The She Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=IBM+Plex+Sans:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body class="join-page">
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+      <div class="navbar-right">
+        <nav>
+          <a href="index.html">Research</a>
+          <a href="people.html">People</a>
+          <a href="publications.html">Publications</a>
+          <a href="join.html">Join The Lab</a>
+        </nav>
+        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo"/>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 JOIN HERO -->
+    <section class="hero hero-join">
+      <div class="hero-content">
+        <h1>Join Us</h1>
+        <p>We are recruiting at all levels — undergraduate interns, Ph.D. students, and postdoctoral fellows. If our work on human brain evolution excites you, email <strong>richardsheshe@gmail.com</strong> with your CV and a short statement of interests.</p>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/NTU_Banner.width-1920.jpg" alt="NTU Singapore" />
+      </div>
+    </section>
+
+    <!-- 02 FELLOWSHIP OPPORTUNITIES -->
+    <section class="join-section join-fellowships" id="fellowships">
+      <h2>Fellowship Opportunities</h2>
+
+      <p><em>Postdoctoral researchers</em></p>
+      <p>
+        <a href="https://www.ntu.edu.sg/research/research-careers/ntu-postdoctoral-fellowships" target="_blank">
+          NTU Presidential Postdoctoral Fellowship
+        </a>
+      </p>
+
+      <p><em>Graduate students</em></p>
+      <p>
+        <a href="https://www.ntu.edu.sg/admissions/graduate/financial-matters/nanyang-president-s-graduate-scholarship" target="_blank">
+          Nanyang President's Graduate Scholarship
+        </a><br />
+        <a href="https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singa-programme" target="_blank">
+          Singapore International Graduate Award (SINGA)
+        </a><br />
+        <a href="https://www.ntu.edu.sg/education/graduate-programme/sbs-ph.d.-programme#additionalInformation" target="_blank">
+          Ph.D. Program at SBS‑NTU
+        </a>
+      </p>
+    </section>
+
+    <!-- 03 ADDRESS -->
+    <section class="join-section join-address" id="address">
+      <h2>Address</h2>
+      <p>
+        School of Biological Sciences, Nanyang Technological University<br />
+        60 Nanyang Drive, Singapore 637551
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

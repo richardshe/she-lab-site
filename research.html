@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research – The She Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=IBM+Plex+Sans:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body class="research-page">
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+      <div class="navbar-right">
+        <nav>
+          <a href="index.html">Research</a>
+          <a href="people.html">People</a>
+          <a href="publications.html">Publications</a>
+          <a href="join.html">Join The Lab</a>
+        </nav>
+        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo"/>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 – Epigenetic Silencing -->
+    <section class="hero hero-research">
+      <div class="hero-content">
+        <h2>Overcoming Epigenetic Silencing for Genome‑wide CRISPRi/a Screening</h2>
+        <p>
+        A major barrier to functional genomics in differentiated human iPSC models is the pervasive silencing of CRISPR machinery during development, an issue not resolved by standard safe‑harbor integration at loci like <em>AAVS1</em> or <em>CLYBL</em>.
+        We developed and validated a new CRISPR platform that overcomes this problem, enabling sustained CRISPRi or CRISPRa activity throughout long‑term differentiation.
+        </p>
+        <p>
+        Using targeted knock‑in strategies, we achieve persistent expression of dCas9 effectors across all three germ layers—including day&nbsp;35 cortical organoids, day&nbsp;18 cardiomyocytes, and day&nbsp;6 hepatocyte‑like cells.
+        Functionally, we obtain ~99 % knock‑down of non‑essential surface markers such as CD81 across lineages.
+        </p>
+        <p>
+        To add temporal control, we engineered degron‑tagged CRISPR systems using the SD40 degron, which enables rapid, tunable ON/OFF switching via a small‑molecule inducer.
+        This platform supports both loss‑of‑function and over‑expression screening in stem‑cell models.
+        We envision it as broadly enabling for genetic screens that refine differentiation protocols, enhance functional maturation, or promote in&nbsp;vivo survival.
+        <strong>We’re actively looking for collaborators—please reach out if you'd like to give these tools a try.</strong>
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/Research_Fig_1.png" alt="Flow‑cytometry violin plots demonstrating robust CRISPRi/a knock‑down across lineages" />
+      </div>
+    </section>
+
+    <!-- 02 – Evolutionary Genomics -->
+    <section class="hero hero-alt reverse">
+      <div class="hero-image">
+        <img src="assets/images/Research_Fig_2.png" alt="Graphical workflow of genome‑wide CRISPR screen in human and chimpanzee cortical organoids" />
+      </div>
+      <div class="hero-content">
+        <h2>A Functional Genomics Map of Human Brain Evolution</h2>
+        <p>
+        The three‑fold expansion of the human cerebral cortex is perhaps the most defining feature of our evolution.
+        This dramatic growth, which unfolded over just a few million years, enabled the emergence of language, abstract reasoning, and complex culture—but we still don’t know which genes or pathways actually drove it.
+        </p>
+        <p>
+        Our lab tackles this question head‑on by combining cerebral organoid models, genome‑wide CRISPR perturbation, and cross‑species comparisons.
+        Using human and chimpanzee iPSCs, we grow 3D cortical organoids side‑by‑side and perform pooled CRISPRi/a screens to identify genes that regulate progenitor self‑renewal, neurogenesis, and differentiation dynamics.
+        With a custom‑designed guide library that perfectly matches both genomes, we measure how each perturbation shifts the balance of cell types during development—then ask whether those effects are conserved or species‑specific.
+        </p>
+        <p>
+        Top hits are prioritised for deeper characterisation using single‑cell transcriptomics, additional great‑ape species, and in&nbsp;vivo validation.
+        The result will be a functional atlas of gene‑by‑species effects in early cortical development—offering new insight into both evolutionary innovation and neurodevelopmental vulnerability.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

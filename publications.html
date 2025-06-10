@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Publications – The She Lab</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&amp;family=IBM+Plex+Sans:wght@300;600&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="pub-page">
+<header class="navbar">
+<div class="navbar-container">
+<div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+<div class="navbar-right">
+<nav>
+<a href="research.html">Research</a>
+<a href="people.html">People</a>
+<a href="publications.html">Publications</a>
+<a href="join.html">Join The Lab</a>
+</nav>
+<img alt="NTU Logo" class="ntu-logo" src="assets/images/NTU_Logo_brightened.png"/>
+</div>
+</div>
+</header>
+
+
+<main class="content-wrapper">
+<h1>Publications</h1>
+<ol class="pub-list">
+<li><span class="title">Comparative landscape of genetic dependencies in human and chimpanzee stem cells</span><br/><span class="authors"><strong>Richard She</strong>, Tyler Fair, Reuben A. Saunders, Bryan J. Pavlovic, Jonathan S. Weissman, Alex A. Pollen</span><br/><a href="https://pubmed.ncbi.nlm.nih.gov/37343560/" target="_blank"><em>Cell 2023 Jul 6;186(14):2977-2994. DOI: 10.1016/j.cell.2023.05.043</em></a></li>
+<li><span class="title">Translational fidelity screens reveal eIF3 as a key regulator of start codon selectivity</span><br/><span class="authors"><strong>Richard She</strong>, Jingchuan Luo, Jonathan S. Weissman</span><br/><a href="https://pubmed.ncbi.nlm.nih.gov/37144468/" target="_blank"><em>Nucleic Acids Research 2023 Jul 7;51(12):6355-6369. DOI: 10.1093/nar/gkad329</em></a></li>
+<li><span class="title">Pervasive function and evidence for selection across standing genetic variation in <em>S. cerevisiae</em></span><br/><span class="authors">Christopher M. Jakobson, <strong>Richard She</strong>, Daniel F. Jarosz</span><br/><a href="https://pubmed.ncbi.nlm.nih.gov/30874558/" target="_blank"><em>Nature Communications 2019 Mar 15;10(1):1222. DOI: 10.1038/s41467-019-09166-1</em></a></li>
+<li><span class="title">Mapping Causal Variants with Single‑Nucleotide Resolution Reveals Biochemical Drivers of Phenotypic Change</span><br/><span class="authors"><strong>Richard She</strong>, Daniel F. Jarosz</span><br/><a href="https://pubmed.ncbi.nlm.nih.gov/29373829/" target="_blank"><em>Cell 2018 Jan 25;172(3):478-490.e15. DOI: 10.1016/j.cell.2017.12.015</em></a></li>
+<li><span class="title">Comprehensive and quantitative mapping of RNA‑protein interactions across a transcribed eukaryotic genome</span><br/><span class="authors"><strong>Richard She</strong>, Anupam K. Chakravarty, Curtis J. Layton, Lauren M. Chircus, Johan O. L. Andreasson, Nandita Damaraju, Peter L. McMahon, Jason D. Buenrostro, Daniel F. Jarosz, William J. Greenleaf</span><br/><a href="https://pubmed.ncbi.nlm.nih.gov/28325876/" target="_blank"><em>PNAS 2017 Apr 4;114(14):3619-3624. DOI: 10.1073/pnas.1618370114</em></a></li>
+<li><span class="title">Intrinsically Disordered Proteins Drive Emergence and Inheritance of Biological Traits</span><br/><span class="authors">Sohini Chakrabortee, James S. Byers, Sandra Jones, David M. Garcia, Bhupinder Bhullar, Amelia Chang, <strong>Richard She</strong>, Laura Lee, Brayon Fremin, Susan Lindquist, Daniel F. Jarosz</span><br/><a href="https://pubmed.ncbi.nlm.nih.gov/27693355/" target="_blank"><em>Cell 2016 Oct 6;167(2):369-381. DOI: 10.1016/j.cell.2016.09.017</em></a></li>
+<li><span class="title">Posttranslational Control of Cdc25 Degradation Terminates <em>Drosophila</em>'s Early Cell‑Cycle Program</span><br/><span class="authors">Stefano Di Talia, <strong>Richard She</strong>, Shelby A. Blythe, Xuemin Lu, Qi Fan Zhang, Eric F. Wieschaus</span><br/><a href="http://www.ncbi.nlm.nih.gov/pubmed/23290553" target="_blank"><em>Current Biology 2013 Jan 21;23(2):127-32. DOI: 10.1016/j.cub.2012.11.029</em></a></li>
+</ol>
+</main>
+<footer class="site-footer">
+<p>© <span id="year"></span> The She Lab. All rights reserved.</p>
+</footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const navToggle=document.getElementById('nav-toggle');
+const navList=document.querySelector('.nav-list');
+navToggle.addEventListener('click',()=>navList.classList.toggle('open'));
+</script>
+</body>
+</html>
