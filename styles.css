@@ -458,6 +458,12 @@ body.research-page .hero-image{
   }
 }
 
+/* --- Mobile: cancel the old negative offset so hero stops hiding the navbar --- */
+@media (max-width:768px){
+  header + main        { margin-top: 0 !important; }
+  header.site-header   { position: static !important; }  /* was fixed */
+}
+
 /* Prevent any accidental horizontal scroll */
 body{
   overflow-x:hidden;
