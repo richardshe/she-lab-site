@@ -85,6 +85,7 @@ h2{font-size:clamp(1.9rem,3.5vw,3rem);}
 /* ============  Footer  ============ */
 .site-footer{text-align:center;padding:2rem 1rem;background:#111;color:#aaa;font-size:.9rem;}
 
+.hero-skull .hero-image img{max-width:620px;}}
 
 
 /* dual skull container */
@@ -108,6 +109,7 @@ h2{font-size:clamp(1.9rem,3.5vw,3rem);}
   }
 }
 
+.hero-skull .hero-image img{max-width:620px;}}
 
 /* publication list */
 .pub-list{margin-top:2rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:1.75rem;font-size:1.05rem;}
@@ -349,57 +351,42 @@ body.research-page .hero-image{
 }
 
 
-/* ===== Mobile nav (no flicker) ===== */
-@media (max-width:768px){
-  #nav-toggle{display:block;}
-  .navbar-right nav{
-    display:none;
-    position:absolute;
-    top:100%;
-    right:1.5rem;
-    background:var(--clr-dark);
-    border:1px solid rgba(255,255,255,1);
-    flex-direction:column;
-    gap:1.25rem;
-    padding:1rem 1.25rem;
-    z-index:100;
+/* Mobile nav – uncollapsed and stacked like a mini hero */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
   }
-  .navbar-right nav.open{
-    display:flex;
-  }
-}
 
-/* -------------------------------------------------
-   HERO 2-column ➜ 1-column  (mobile-first flexbox)
-   ------------------------------------------------- */
-.hero{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-.hero.reverse{
-  flex-direction:row-reverse;
-}
-.hero-image{flex:1 1 480px;}
-.hero-content{flex:1 1 420px;}
-.hero-image img{
-  width:100%;
-  height:auto;
-  max-width:none;
-  border-radius:6px;
-  box-shadow:0 6px 18px rgba(0,0,0,.15);
-}
-@media (max-width:768px){
-  .hero,
-  .hero.reverse{
-    flex-direction:column;
-    text-align:left;
+  .navbar-left {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
-  .hero-image,
-  .hero-content{
-    flex:1 1 100%;
-    max-width:100%;
+
+  .navbar-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-right nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .navbar-right nav a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+    width: 100%;
+  }
+
+  .ntu-logo {
+    display: none;
   }
 }
