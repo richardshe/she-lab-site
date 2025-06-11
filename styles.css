@@ -460,3 +460,47 @@ body{
   }
 }
 
+
+
+
+.bio-hero .hero-image img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.bio-hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.bio-hero .hero-content {
+    max-width: 600px;
+}
+
+
+
+/* === People Page Bio hero tweaks === */
+.bio-hero {
+    margin-top: 5rem;      /* extra space above second hero */
+    gap: 1.25rem;          /* tighter gap between photo and text */
+}
+
+.bio-hero .hero-image img {
+    max-width: 260px;      /* slightly smaller portrait */
+}
+
+.bio-hero h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.3rem); /* subtler heading */
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    /* hide duplicate portrait on small screens */
+    .bio-hero .hero-image { display: none; }
+}
