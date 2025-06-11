@@ -350,24 +350,7 @@ body.research-page .hero-image{
 
 
 /* ===== Mobile nav (no flicker) ===== */
-@media (max-width:768px){
-  #nav-toggle{display:block;}
-  .navbar-right nav{
-    display:none;
-    position:absolute;
-    top:100%;
-    right:1.5rem;
-    background:var(--clr-dark);
-    border:1px solid rgba(255,255,255,1);
-    flex-direction:column;
-    gap:1.25rem;
-    padding:1rem 1.25rem;
-    z-index:100;
-  }
-  .navbar-right nav.open{
-    display:flex;
-  }
-}
+
 
 /* -------------------------------------------------
    HERO 2-column ➜ 1-column  (mobile-first flexbox)
@@ -456,12 +439,6 @@ body.research-page .hero-image{
   .ntu-logo{
     display: none;
   }
-}
-
-/* --- Mobile: cancel the old negative offset so hero stops hiding the navbar --- */
-@media (max-width:768px){
-  header + main        { margin-top: 0 !important; }
-  header.site-header   { position: static !important; }  /* was fixed */
 }
 
 /* Prevent any accidental horizontal scroll */
