@@ -350,6 +350,24 @@ body.research-page .hero-image{
 
 
 /* ===== Mobile nav (no flicker) ===== */
+@media (max-width:768px){
+  #nav-toggle{display:block;}
+  .navbar-right nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:1.5rem;
+    background:var(--clr-dark);
+    border:1px solid rgba(255,255,255,1);
+    flex-direction:column;
+    gap:1.25rem;
+    padding:1rem 1.25rem;
+    z-index:100;
+  }
+  .navbar-right nav.open{
+    display:flex;
+  }
+}
 
 
 /* -------------------------------------------------
@@ -362,30 +380,14 @@ body.research-page .hero-image{
   gap:2rem;
   flex-wrap:wrap;
 }
-.hero.reverse{
-  flex-direction:row-reverse;
-}
+/*
+  FIX: This problematic rule was removed to fix the desktop layout.
+  .hero.reverse{
+    flex-direction:row-reverse;
+  }
+*/
 .hero-image{flex:1 1 480px;}
 .hero-content{flex:1 1 420px;}
-.hero-image img{
-  width:100%;
-  height:auto;
-  max-width:none;
-  border-radius:6px;
-  box-shadow:0 6px 18px rgba(0,0,0,.15);
-}
-@media (max-width:768px){
-  .hero,
-  .hero.reverse{
-    flex-direction:column;
-    text-align:left;
-  }
-  .hero-image,
-  .hero-content{
-    flex:1 1 100%;
-    max-width:100%;
-  }
-}
 
 
 /* === Mobile navbar layout (burger removed) === */
@@ -450,4 +452,32 @@ body{
   .hero {
     padding-top: 3.5rem;  /* reduced from 6.5rem for tighter spacing under mobile nav */
   }
+}
+
+/* ==========================================================
+   FIX for Research Page Mobile Layout
+   ADDED: These rules are added to the end of the file to
+   surgically fix the mobile layout on the research page
+   without affecting other pages.
+   ========================================================== */
+@media (max-width: 768px) {
+    /* This rule fixes the stacking order for the second hero block */
+    .hero.reverse {
+        flex-direction: column-reverse;
+    }
+
+    /* These rules remove the large desktop-only gaps on mobile */
+    body.research-page .hero-image {
+        padding-top: 0;
+    }
+    .hero-research .hero-image img,
+    .hero-alt .hero-image img {
+        margin-top: 0;
+    }
+
+    /* This rule adds a consistent, smaller gap for mobile */
+    .hero-content + .hero-image,
+    .hero-image + .hero-content {
+        margin-top: 2rem;
+    }
 }
