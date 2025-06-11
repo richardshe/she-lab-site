@@ -46,46 +46,81 @@ h2{font-size:clamp(1.9rem,3.5vw,3rem);}
   .nav-list li{padding:1rem 1.25rem;}
 }
 
-
-
 .navbar-left a:hover {
   text-decoration: underline;
 }
-/* ============  Hero Blocks  ============ */
+
+/* ============  Hero Blocks - RESTORED TO GRID  ============ */
 .hero{
   display:grid;
   grid-template-columns: minmax(auto,600px) minmax(320px,1fr);
   gap:3rem;
   align-items:center;
-  padding:6.5rem 6vw 6rem;   /* top offset for fixed nav */
+  padding:6.5rem 6vw 6rem;
 }
-.hero.reverse{grid-template-columns: minmax(320px,1fr) minmax(auto,600px);}
+.hero.reverse{
+  grid-template-columns: minmax(320px,1fr) minmax(auto,600px);
+}
 .hero-content{max-width:600px;}
 .hero-content p{margin-top:1.25rem;max-width:60ch;}
 .hero-image{justify-self:center;}
-/* base */
+
+/* base image styling */
 .hero-image img{
   max-width:450px;
   height:auto;
   border-radius:6px;
   box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
+
+/* specific hero variants */
 .hero-skull{padding-top:8rem;background:var(--clr-dark);color:var(--clr-light);}
- /* illustration is wide */
 .hero-chimp{background:var(--clr-mid);}
 .hero-cas9{background:#ebe6ff;}
+
+/* Research page specific image sizing */
+.hero-research .hero-image img{
+  max-width: 620px;
+}
+
+.hero-alt .hero-image img{
+  max-width: 620px;
+}
+
+/* Fine-tune research hero alignment */
+body.research-page .hero-image{
+  display: flex;
+  align-items: center;
+}
+
+/* Offset images on desktop only */
+@media (min-width: 901px) {
+  .hero-research .hero-image img{
+    margin-top: 12rem;
+  }
+  
+  .hero-alt .hero-image img{
+    margin-top: 9rem;
+  }
+  
+  .hero-research .hero-image,
+  .hero-alt .hero-image{
+    padding-top: 2.2rem;
+  }
+}
+
+/* Mobile responsive */
 @media(max-width:900px){
-  .hero,.hero.reverse{
+  .hero,
+  .hero.reverse{
     grid-template-columns:1fr;
     gap:2rem;
   }
-  /* base */
-.hero-image img{max-width:100%;height:auto;}
+  .hero-image img{max-width:100%;height:auto;}
 }
+
 /* ============  Footer  ============ */
 .site-footer{text-align:center;padding:2rem 1rem;background:#111;color:#aaa;font-size:.9rem;}
-
-
 
 /* dual skull container */
 .dual-skull{
@@ -107,7 +142,6 @@ h2{font-size:clamp(1.9rem,3.5vw,3rem);}
     max-width:300px;
   }
 }
-
 
 /* publication list */
 .pub-list{margin-top:2rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:1.75rem;font-size:1.05rem;}
@@ -174,7 +208,6 @@ body.people-page{background:#fff;color:#000;}
 
 body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
 
-
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -187,7 +220,6 @@ body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
   width: auto;
   margin-left: 1rem;
 }
-
 
 .nav-container nav {
   display: flex;
@@ -204,7 +236,6 @@ body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
   width: auto;
   margin-left: 1.5rem;
 }
-
 
 .nav-right-group {
   display: flex;
@@ -223,7 +254,6 @@ body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
   height: 36px;
   width: auto;
 }
-
 
 .navbar {
   background-color: black;
@@ -307,88 +337,21 @@ body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
   background: var(--clr-light);
 }
 
-
 /* === Tweaks for hero-alt (Research section 2) === */
 .hero-alt{
-  padding: 5rem 6vw; /* slightly tighter vertical spacing */
+  padding: 5rem 6vw;
 }
 
 .hero-alt .hero-image img{
-  max-width: 780px; /* allow wider display for panoramic figure */
-}
-
-
-/* === Fine-tune research hero alignment & sizing === */
-body.research-page .hero-image{
-  display: flex;               /* enable centering */
-  align-items: center;          /* vertical centre relative to text */
-}
-
-.hero-research .hero-image img{
-  align-self: center;       /* default, probably already set */
-  margin-top: 12rem;         /* this repositions the whole image block */
-  max-width: 620px;
-}
-
-.hero-alt .hero-image img{
-  align-self: center;       /* default, probably already set */
-  margin-top: 9rem;         /* this repositions the whole image block */
-  max-width: 620px;             /* match first figure */
+  max-width: 780px;
 }
 
 .hero-research,
 .hero-alt{
-  padding: 5.5rem 6vw;          /* slightly tighter without crowding */
+  padding: 5.5rem 6vw;
 }
 
-
-/* === Offset images to centre relative to body text (exclude headline) === */
-.hero-research .hero-image,
-.hero-alt .hero-image{
-  padding-top: 2.2rem;   /* tweak until visually centred */
-}
-
-
-/* ===== Mobile nav (no flicker) ===== */
-
-
-/* -------------------------------------------------
-   HERO 2-column ➜ 1-column  (mobile-first flexbox)
-   ------------------------------------------------- */
-.hero{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-.hero.reverse{
-  flex-direction:row-reverse;
-}
-.hero-image{flex:1 1 480px;}
-.hero-content{flex:1 1 420px;}
-.hero-image img{
-  width:100%;
-  height:auto;
-  max-width:none;
-  border-radius:6px;
-  box-shadow:0 6px 18px rgba(0,0,0,.15);
-}
-@media (max-width:768px){
-  .hero,
-  .hero.reverse{
-    flex-direction:column;
-    text-align:left;
-  }
-  .hero-image,
-  .hero-content{
-    flex:1 1 100%;
-    max-width:100%;
-  }
-}
-
-
-/* === Mobile navbar layout (burger removed) === */
+/* === Mobile navbar layout === */
 @media (max-width: 768px) {
   /* Hide the burger icon entirely */
   #nav-toggle{
@@ -439,15 +402,14 @@ body.research-page .hero-image{
   .ntu-logo{
     display: none;
   }
+  
+  /* Reduced padding on mobile */
+  .hero {
+    padding-top: 3.5rem;
+  }
 }
 
 /* Prevent any accidental horizontal scroll */
 body{
   overflow-x:hidden;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 3.5rem;  /* reduced from 6.5rem for tighter spacing under mobile nav */
-  }
 }
