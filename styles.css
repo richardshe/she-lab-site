@@ -451,3 +451,12 @@ body{
     padding-top: 3.5rem;  /* reduced from 6.5rem for tighter spacing under mobile nav */
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero,
+  .people-wrapper,
+  body.pub-page .content-wrapper {
+    padding-top: 3.5rem;
+  }
+}
