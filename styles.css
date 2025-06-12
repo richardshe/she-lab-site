@@ -283,6 +283,11 @@ body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
+.hero-join .hero-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .hero-join .hero-image img{
   max-width: 620px;
 }
@@ -507,5 +512,8 @@ body{
 @media (max-width: 768px) {
   .bio-hero .hero-image {
     display: none;
+  }
+  .bio-hero .hero-content {
+    padding-right: 0;
   }
 }
