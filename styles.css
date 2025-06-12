@@ -569,6 +569,12 @@ body.research-page .hero-image img{
 body.research-page{
     font-size: 16px;   /* slightly smaller base font */
 }
+/* === Research page: restore global nav size === */
+body.research-page .navbar,
+body.research-page .navbar-left,
+body.research-page .navbar-right nav a{
+    font-size: 1.125rem;   /* 1.125 × 16 px  = 18 px */
+}
 body.research-page .hero,
 body.research-page .hero-alt{
     padding:4.5rem 5vw;   /* tighter vertical rhythm */
