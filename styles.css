@@ -517,3 +517,86 @@ body{
     padding-right: 0;
   }
 }
+
+
+/* === Forced single-column layout for research === */
+
+.hero,
+.hero.reverse {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 5.5rem 6vw;
+}
+
+.hero-image,
+.hero-content {
+  flex: none;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-image img {
+  margin-top: 0;
+  width: 100%;
+  max-width: 700px;
+}
+
+
+/* === Research page single-column refinement v2 === */
+body.research-page{
+    font-size: 16px;   /* slightly smaller base font */
+}
+body.research-page .hero,
+body.research-page .hero-alt{
+    padding:4.5rem 5vw;   /* tighter vertical rhythm */
+}
+body.research-page .hero-content,
+body.research-page .hero-image{
+    max-width:820px;      /* wider column */
+}
+body.research-page .hero-content p,
+body.research-page .hero-content ul{
+    max-width:70ch;       /* comfortable line length */
+}
+body.research-page .hero-image img{
+    margin-top:0;
+}
+/* ensure list spacing */
+body.research-page ul{
+    margin-top:1.25rem;
+    padding-left:1.25rem;
+}
+
+body.research-page ul li {
+    margin-bottom: 1.25rem;
+}
+
+/* === Final alignment tweaks === */
+body.research-page .hero-image img {
+  margin-top: 0 !important; /* remove old offsets */
+}
+
+.hero-research .hero-image,
+.hero-alt .hero-image {
+  padding-top: 0 !important; /* remove extra padding */
+}
+
+body.research-page .hero-content {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body.research-page .hero-content p,
+body.research-page .hero-content ul {
+  max-width: 820px;
+}
+
+body.research-page .hero-image {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}

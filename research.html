@@ -1,88 +1,92 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research – The She Lab</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=IBM+Plex+Sans:wght@300;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Research – CRISPR Platforms for Stem Cell Biology</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&amp;family=IBM+Plex+Sans:wght@300;600&amp;display=swap" rel="stylesheet"/>
 </head>
 <body class="research-page">
-  <header class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
-      <div class="navbar-right">
-        <button id="nav-toggle" aria-label="Menu">☰</button>
-        <nav>
-          <a href="index.html">Research</a>
-          <a href="people.html">People</a>
-          <a href="publications.html">Publications</a>
-          <a href="join.html">Join The Lab</a>
-        </nav>
-        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo"/>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- 01 – Epigenetic Silencing -->
-    <section class="hero hero-research">
-      <div class="hero-content">
-        <h2>Overcoming Epigenetic Silencing for Genome‑wide CRISPRi/a Screening</h2>
-        <p>
-        A major barrier to functional genomics in differentiated human iPSC models is the pervasive silencing of CRISPR machinery during development, an issue not resolved by standard safe‑harbor integration at loci like <em>AAVS1</em> or <em>CLYBL</em>.
-        We developed and validated a new CRISPR platform that overcomes this problem, enabling sustained CRISPRi or CRISPRa activity throughout long‑term differentiation.
+<header class="navbar">
+<div class="navbar-container">
+<div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+<div class="navbar-right">
+<button aria-label="Menu" id="nav-toggle">☰</button>
+<nav>
+<a href="index.html">Research</a>
+<a href="people.html">People</a>
+<a href="publications.html">Publications</a>
+<a href="join.html">Join The Lab</a>
+</nav>
+<img alt="NTU Logo" class="ntu-logo" src="assets/images/NTU_Logo_brightened.png"/>
+</div>
+</div>
+</header>
+<main>
+<!-- 01 – Epigenetic Silencing -->
+<section class="hero hero-research">
+<div class="hero-content">
+<h2>CRISPR Platforms for Stem Cell Biology</h2>
+<p>
+          CRISPR-based functional genomics has transformed cell lines and cancer models, but it remains largely inaccessible in stem cell models of human development. A major obstacle is the pervasive silencing of CRISPR machinery during differentiation, which renders most transgene-based tools ineffective in long-term contexts like 3D-organoids. This bottleneck has severely limited our ability to dissect how key developmental regulators control cell fate, maturation, and tissue architecture.
         </p>
-        <p>
-        Using targeted knock‑in strategies, we achieve persistent expression of dCas9 effectors across all three germ layers—including day&nbsp;35 cortical organoids, day&nbsp;18 cardiomyocytes, and day&nbsp;6 hepatocyte‑like cells.
-        Functionally, we obtain ~99 % knock‑down of non‑essential surface markers such as CD81 across lineages.
+<p>
+          Our lab has developed next-generation CRISPRi and CRISPRa platforms that overcome this barrier. Our latest tools achieve robust expression of dCas9 effectors across all three germ layers, including in 35-day cortical organoids, 18-day cardiomyocytes, and hepatocytes. We routinely observe ~99% repression of easily observable surface markers such as CD81 or B2M (Fig 1), enabling true genome-wide perturbation screens in differentiated human tissues for the first time.
         </p>
-        <p>
-        To add temporal control, we engineered degron‑tagged CRISPR systems using the SD40 degron, which enables rapid, tunable ON/OFF switching via a small‑molecule inducer.
-        This platform supports both loss‑of‑function and over‑expression screening in stem‑cell models.
-        We envision it as broadly enabling for genetic screens that refine differentiation protocols, enhance functional maturation, or promote in&nbsp;vivo survival.
-        <strong>We’re actively looking for collaborators—please reach out if you'd like to give these tools a try.</strong>
+<p>
+          To add temporal precision, we engineered a degron-based CRISPR system using the SD40 tag, which allows rapid ON/OFF switching via a small-molecule inducer. This inducible Cas9 exhibits zero leakiness and full reversibility, enabling dynamic, time-resolved perturbation experiments throughout human stem cell differentiation.
         </p>
-      </div>
-      <div class="hero-image">
-        <img src="assets/images/Research_Fig_1.png" alt="Flow‑cytometry violin plots demonstrating robust CRISPRi/a knock‑down across lineages" />
-      </div>
-    </section>
-
-    <!-- 02 – Evolutionary Genomics -->
-    <section class="hero hero-alt reverse">
-      <div class="hero-image">
-        <img src="assets/images/Research_Fig_2.png" alt="Graphical workflow of genome‑wide CRISPR screen in human and chimpanzee cortical organoids" />
-      </div>
-      <div class="hero-content">
-        <h2>A Functional Genomics Map of Human Brain Evolution</h2>
-        <p>
-        The three‑fold expansion of the human cerebral cortex is perhaps the most defining feature of our evolution.
-        This dramatic growth, which unfolded over just a few million years, enabled the emergence of language, abstract reasoning, and complex culture—but we still don’t know which genes or pathways actually drove it.
+<p>
+          We view this platform as a foundation for a new era of stem-cell–based functional genomics—one that enables precise, large-scale dissection of the gene networks that govern lineage specification, functional maturation, and tissue integration. By combining genome-scale perturbation with temporal control, we can now ask questions such as:
         </p>
-        <p>
-        Our lab tackles this question head‑on by combining cerebral organoid models, genome‑wide CRISPR perturbation, and cross‑species comparisons.
-        Using human and chimpanzee iPSCs, we grow 3D cortical organoids side‑by‑side and perform pooled CRISPRi/a screens to identify genes that regulate progenitor self‑renewal, neurogenesis, and differentiation dynamics.
-        With a custom‑designed guide library that perfectly matches both genomes, we measure how each perturbation shifts the balance of cell types during development—then ask whether those effects are conserved or species‑specific.
+<ul>
+<li><strong>Which genes refine the trajectory of differentiation toward specific, therapeutically relevant cell types?</strong> For example, pancreatic beta cell differentiation from iPSCs remains inefficient; systematic loss-of-function and overexpression screens could identify regulators that enhance lineage fidelity and suppress off-target fates.</li>
+<li><strong>Which pathways promote the functional maturation of in vitro–derived cell types?</strong> Many systems, including cortical organoids and cardiomyocytes, stall in a fetal-like state. CRISPR-based screening offers a way to discover transcriptional or epigenetic regulators that drive late-stage maturation and functional competence.</li>
+<li><strong>Which gene perturbations enhance the survival, engraftment, or integration of transplanted cells <em>in vivo</em>?</strong> Dopaminergic neuron transplants for Parkinson’s disease, now in clinical trials, highlight both the promise and the challenges of cell therapy. Genetic screens could uncover factors that improve long-term graft viability and function in host tissue.</li>
+</ul>
+<p>
+          These questions span tissues and disease areas far beyond what we can pursue alone. While our focus is on the nervous system, the tools are broadly applicable. We're eager to collaborate—please get in touch if you're interested in deploying them in your own stem cell system.
         </p>
-        <p>
-        Top hits are prioritised for deeper characterisation using single‑cell transcriptomics, additional great‑ape species, and in&nbsp;vivo validation.
-        The result will be a functional atlas of gene‑by‑species effects in early cortical development—offering new insight into both evolutionary innovation and neurodevelopmental vulnerability.
+</div>
+<div class="hero-image">
+<img alt="Flow‑cytometry violin plots demonstrating robust CRISPRi/a knock‑down across lineages" src="assets/images/Research_Fig_1.png"/>
+</div>
+</section>
+<!-- 02 – Evolutionary Genomics -->
+<section class="hero hero-alt"><div class="hero-content">
+<h2>A Functional Genomics Map of Human Brain Evolution</h2>
+<p>
+          The three‑fold expansion of the human cerebral cortex is perhaps the most defining feature of our evolution. This dramatic growth, which unfolded over just a few million years, enabled the emergence of language, abstract reasoning, and complex culture—but we still don’t know which genes or pathways actually drove it.
         </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
-  </footer>
-  <script>
-document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.querySelector('.navbar-right nav');
-if(navToggle && navMenu){
-  navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
-}
-</script>
+<p>
+          Our lab tackles this question head‑on by combining cerebral organoid models, genome‑wide CRISPR perturbation, and cross‑species comparisons. Using human and chimpanzee iPSCs, we grow 3D cortical organoids side‑by‑side and perform pooled CRISPRi/a screens to identify genes that regulate progenitor self‑renewal, neurogenesis, and differentiation dynamics. With a custom‑designed guide library that perfectly matches both genomes, we measure how each perturbation shifts the balance of cell types during development—then ask whether those effects are conserved or species‑specific.
+        </p>
+<p>
+          Key questions that we seek to answer include:
+        </p>
+<ul>
+<li><strong>How is the balance between progenitor self-renewal and neurogenic commitment tuned across primate species? Which signaling pathways, epigenetic regulators, or metabolic pathways play a key role?</strong></li>
+<li><strong>Can outgroup comparisons across the great apes reveal unique molecular changes on the hominin branch of evolution?</strong></li>
+<li><strong>Where do evolutionary innovations intersect with loci implicated in neurodevelopmental disorders, and does human cortical expansion lead to unique vulnerabilities?</strong></li>
+</ul>
+<p>
+</div><div class="hero-image">
+<img alt="Graphical workflow of genome‑wide CRISPR screen in human and chimpanzee cortical organoids" src="assets/images/Research_Fig_2.png"/>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<p>© <span id="year"></span> The She Lab. All rights reserved.</p>
+</footer>
+<script>
+    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.navbar-right nav');
+    if(navToggle && navMenu){
+      navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    }
+  </script>
 </body>
 </html>
