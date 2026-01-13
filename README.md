@@ -24,9 +24,12 @@ CREATE TABLE IF NOT EXISTS votes (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   item_id TEXT NOT NULL,
   client_id TEXT NOT NULL,
+  session_id TEXT,
   guess TEXT NOT NULL,
   section TEXT NOT NULL,
   truth_source TEXT NOT NULL,
+  country TEXT,
+  colo TEXT,
   time_ms INTEGER,
   created_at INTEGER NOT NULL
 );
@@ -38,6 +41,14 @@ Run with:
 
 ```bash
 wrangler d1 execute spot-the-bot --file ./schema.sql
+```
+
+If you are migrating an existing database, run:
+
+```sql
+ALTER TABLE votes ADD COLUMN session_id TEXT;
+ALTER TABLE votes ADD COLUMN country TEXT;
+ALTER TABLE votes ADD COLUMN colo TEXT;
 ```
 
 4. Deploy the worker:
