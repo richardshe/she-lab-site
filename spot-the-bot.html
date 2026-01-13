@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Spot the Bot - Can you tell the difference between human and AI-written scientific text? Test your skills in this interactive game.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.richardshelab.com/spot-the-bot.html">
+  <title>Spot the Bot | The She Lab</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Merriweather:wght@900&display=swap" rel="stylesheet">
+</head>
+<body class="spot-the-bot-page">
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+      <div class="navbar-right">
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+        <nav>
+          <a href="research.html">Research</a>
+          <a href="people.html">People</a>
+          <a href="publications.html">Publications</a>
+          <a href="join.html">Join The Lab</a>
+          <a href="spot-the-bot.html" class="active">Spot the Bot</a>
+        </nav>
+        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="stb-container">
+    <div class="stb-header">
+      <h1>Spot the Bot</h1>
+      <p class="stb-subtitle">Can you tell the difference between human-written and AI-generated scientific text?</p>
+    </div>
+
+    <!-- Game Card -->
+    <div class="stb-card" id="game-card">
+      <div class="stb-info">
+        <p>Read the passage below and guess whether it was written by a <strong>human</strong> or a <strong>bot</strong> (AI).</p>
+      </div>
+
+      <!-- Passage Display -->
+      <div class="stb-passage-container" id="passage-container">
+        <div class="stb-passage" id="passage-text">
+          Loading passage...
+        </div>
+      </div>
+
+      <!-- Guess Buttons (visible before vote) -->
+      <div class="stb-buttons" id="guess-buttons">
+        <button class="stb-btn stb-btn-human" id="btn-human" aria-label="Vote Human-written">
+          Human-written
+        </button>
+        <button class="stb-btn stb-btn-bot" id="btn-bot" aria-label="Vote Bot-written">
+          Bot-written
+        </button>
+      </div>
+
+      <!-- Result Display (visible after vote) -->
+      <div class="stb-result" id="result-container" style="display: none;">
+        <div class="stb-result-message" id="result-message">
+          <!-- Correct/Incorrect message will appear here -->
+        </div>
+
+        <div class="stb-reveal">
+          <p class="stb-reveal-label">Actual source:</p>
+          <div class="stb-badge" id="source-badge">
+            <!-- Badge will be inserted here -->
+          </div>
+          <p class="stb-model-detail" id="model-detail">
+            <!-- Model detail will appear here -->
+          </p>
+        </div>
+
+        <!-- Stats feedback -->
+        <div class="stb-stats-feedback" id="stats-feedback">
+          <!-- Will show % of players who guessed "bot" -->
+        </div>
+
+        <button class="stb-btn stb-btn-next" id="btn-next">
+          Next Sample
+        </button>
+      </div>
+
+      <!-- Loading/Error Messages -->
+      <div class="stb-message" id="loading-message" style="display: none;">
+        Submitting your vote...
+      </div>
+      <div class="stb-message stb-error" id="error-message" style="display: none;">
+        <!-- Error messages appear here -->
+      </div>
+    </div>
+
+    <!-- Link to Polls Page -->
+    <div class="stb-footer-link">
+      <a href="spot-the-bot-polls.html">View aggregate results and statistics →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.navbar-right nav');
+    if(navToggle && navMenu){
+      navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    }
+  </script>
+  <script src="spot-the-bot.js"></script>
+</body>
+</html>

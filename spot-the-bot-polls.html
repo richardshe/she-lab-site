@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Spot the Bot Results - View aggregate statistics on human vs AI text detection accuracy.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.richardshelab.com/spot-the-bot-polls.html">
+  <title>Results & Statistics | Spot the Bot | The She Lab</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Merriweather:wght@900&display=swap" rel="stylesheet">
+</head>
+<body class="spot-the-bot-polls-page">
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+      <div class="navbar-right">
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+        <nav>
+          <a href="research.html">Research</a>
+          <a href="people.html">People</a>
+          <a href="publications.html">Publications</a>
+          <a href="join.html">Join The Lab</a>
+          <a href="spot-the-bot.html">Spot the Bot</a>
+        </nav>
+        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="stb-container">
+    <div class="stb-header">
+      <h1>Spot the Bot: Results</h1>
+      <p class="stb-subtitle">Aggregate statistics on player guesses</p>
+    </div>
+
+    <!-- Overall Stats Card -->
+    <div class="stb-card stb-polls-card">
+      <h2>Overall Statistics</h2>
+      <div id="overall-stats">
+        <div class="stb-stat-row">
+          <span class="stb-stat-label">Total votes:</span>
+          <span class="stb-stat-value" id="total-votes">Loading...</span>
+        </div>
+        <div class="stb-stat-row">
+          <span class="stb-stat-label">Guessed "Bot":</span>
+          <span class="stb-stat-value" id="total-bot-guesses">Loading...</span>
+        </div>
+        <div class="stb-stat-row">
+          <span class="stb-stat-label">Guessed "Human":</span>
+          <span class="stb-stat-value" id="total-human-guesses">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breakdown by True Source -->
+    <div class="stb-card stb-polls-card">
+      <h2>Accuracy by Source</h2>
+      <p class="stb-info-text">Percentage of players who guessed "Bot" for each actual source:</p>
+
+      <div class="stb-source-breakdown" id="source-breakdown">
+        <!-- Human -->
+        <div class="stb-source-stat">
+          <div class="stb-source-header">
+            <span class="stb-badge stb-badge-human">Human</span>
+            <span class="stb-source-count" id="human-count">0 votes</span>
+          </div>
+          <div class="stb-progress-bar">
+            <div class="stb-progress-fill" id="human-progress" style="width: 0%"></div>
+          </div>
+          <p class="stb-progress-label"><span id="human-percent">0%</span> guessed "Bot"</p>
+        </div>
+
+        <!-- ChatGPT -->
+        <div class="stb-source-stat">
+          <div class="stb-source-header">
+            <span class="stb-badge stb-badge-chatgpt">ChatGPT</span>
+            <span class="stb-source-count" id="chatgpt-count">0 votes</span>
+          </div>
+          <div class="stb-progress-bar">
+            <div class="stb-progress-fill stb-fill-chatgpt" id="chatgpt-progress" style="width: 0%"></div>
+          </div>
+          <p class="stb-progress-label"><span id="chatgpt-percent">0%</span> guessed "Bot"</p>
+        </div>
+
+        <!-- Claude -->
+        <div class="stb-source-stat">
+          <div class="stb-source-header">
+            <span class="stb-badge stb-badge-claude">Claude</span>
+            <span class="stb-source-count" id="claude-count">0 votes</span>
+          </div>
+          <div class="stb-progress-bar">
+            <div class="stb-progress-fill stb-fill-claude" id="claude-progress" style="width: 0%"></div>
+          </div>
+          <p class="stb-progress-label"><span id="claude-percent">0%</span> guessed "Bot"</p>
+        </div>
+
+        <!-- Gemini -->
+        <div class="stb-source-stat">
+          <div class="stb-source-header">
+            <span class="stb-badge stb-badge-gemini">Gemini</span>
+            <span class="stb-source-count" id="gemini-count">0 votes</span>
+          </div>
+          <div class="stb-progress-bar">
+            <div class="stb-progress-fill stb-fill-gemini" id="gemini-progress" style="width: 0%"></div>
+          </div>
+          <p class="stb-progress-label"><span id="gemini-percent">0%</span> guessed "Bot"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Per-Item Statistics (Optional) -->
+    <div class="stb-card stb-polls-card">
+      <h2>Per-Item Statistics</h2>
+      <p class="stb-info-text">Individual passage statistics (sample ID, votes, % guessed "Bot"):</p>
+      <div id="per-item-stats" class="stb-per-item-container">
+        <!-- Will be populated dynamically -->
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div class="stb-message stb-error" id="error-message" style="display: none;">
+      Failed to load statistics. The backend may be unavailable.
+    </div>
+
+    <!-- Back to Game Link -->
+    <div class="stb-footer-link">
+      <a href="spot-the-bot.html">← Back to game</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.navbar-right nav');
+    if(navToggle && navMenu){
+      navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    }
+  </script>
+  <script src="spot-the-bot.js"></script>
+  <script>
+    // Initialize polls page when loaded
+    if (typeof window.SpotTheBot !== 'undefined') {
+      window.SpotTheBot.initPolls();
+    }
+  </script>
+</body>
+</html>

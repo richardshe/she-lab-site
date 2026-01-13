@@ -1,0 +1,38 @@
+# Cloudflare Worker Configuration for Spot the Bot
+
+name = "spot-the-bot-api"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Uncomment and configure your account ID
+# account_id = "your-account-id-here"
+
+# D1 Database binding
+# After creating your D1 database, uncomment and update the database_id:
+[[d1_databases]]
+binding = "DB"
+database_name = "spot-the-bot-db"
+database_id = "your-database-id-here"
+
+# Routes - Configure to match your domain
+# Option 1: Use a route pattern
+# routes = [
+#   { pattern = "www.richardshelab.com/api/*", zone_name = "richardshelab.com" }
+# ]
+
+# Option 2: Use a custom domain (requires Cloudflare Workers custom domains)
+# routes = [
+#   { pattern = "api.richardshelab.com/*" }
+# ]
+
+# Environment variables (optional)
+# [vars]
+# ENVIRONMENT = "production"
+
+# Development configuration
+[env.development]
+# Use a separate D1 database for development
+# [[env.development.d1_databases]]
+# binding = "DB"
+# database_name = "spot-the-bot-db-dev"
+# database_id = "your-dev-database-id-here"

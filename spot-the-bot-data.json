@@ -1,0 +1,35 @@
+[
+  {
+    "id": "S01",
+    "section": "abstract",
+    "title": "Genome Editing in Plants",
+    "text": "Recent advances in CRISPR-Cas9 technology have revolutionized our ability to precisely modify plant genomes. This review examines the current state of genome editing applications in crop improvement, focusing on enhancing nutritional content, disease resistance, and stress tolerance. We discuss the technical challenges associated with delivering editing machinery to plant cells, off-target effects, and strategies for achieving tissue-specific modifications. Furthermore, we explore the regulatory landscape surrounding genome-edited crops and public perception of this technology. As the global population continues to grow, genome editing presents a promising tool for developing climate-resilient crops that can contribute to food security.",
+    "truth": {
+      "source": "chatgpt",
+      "model_detail": "GPT-4.1",
+      "shade_hex": "#10a37f"
+    }
+  },
+  {
+    "id": "S02",
+    "section": "intro",
+    "title": "Neural Networks and Cognition",
+    "text": "The mammalian brain comprises billions of interconnected neurons that form complex networks underlying cognitive processes. Understanding how these networks encode, process, and retrieve information remains one of neuroscience's greatest challenges. Recent technological advances, including optogenetics and two-photon calcium imaging, have enabled researchers to observe and manipulate neural activity with unprecedented precision. These tools have revealed that information is represented through distributed patterns of neural activity rather than individual neurons acting in isolation. Oscillatory dynamics, particularly in the theta and gamma frequency ranges, appear to coordinate activity across distant brain regions, facilitating information integration. Computational models suggest that both rate coding and temporal coding mechanisms contribute to neural computation. Moreover, synaptic plasticity—the ability of connections between neurons to strengthen or weaken over time—provides a cellular mechanism for learning and memory formation. The prefrontal cortex, hippocampus, and sensory cortices interact through recurrent connections, enabling flexible behavior adapted to environmental demands. Investigating these circuit-level mechanisms promises to illuminate the biological basis of cognition and inform treatments for neurological disorders. This review synthesizes recent findings on neural network organization, dynamics, and plasticity, with emphasis on how distributed activity patterns give rise to complex behaviors. We also discuss emerging technologies that may further advance our understanding of brain function.",
+    "truth": {
+      "source": "claude",
+      "model_detail": "Claude 3.5 Sonnet",
+      "shade_hex": "#d97757"
+    }
+  },
+  {
+    "id": "S03",
+    "section": "discussion",
+    "title": "Climate Change Impacts on Marine Ecosystems",
+    "text": "Our findings demonstrate significant shifts in phytoplankton community composition associated with rising ocean temperatures. The observed decline in diatom abundance and corresponding increase in cyanobacteria populations has profound implications for marine food webs. Diatoms serve as a primary food source for zooplankton and contribute substantially to carbon export to the deep ocean. Their replacement by smaller cyanobacteria may reduce energy transfer efficiency to higher trophic levels and diminish the ocean's capacity to sequester atmospheric carbon dioxide. These changes align with predictions from ecosystem models but occur more rapidly than anticipated. The geographic expansion of warm-water species into historically temperate regions suggests that climate velocity exceeds the adaptive capacity of some resident species. Phenological mismatches between predator and prey populations have also been documented, disrupting established ecological relationships. Ocean acidification compounds these stressors by impairing calcification in key organisms such as pteropods and coccolithophores. The synergistic effects of warming and acidification represent a double threat to marine biodiversity. Management strategies must account for ecosystem-level changes rather than focusing solely on individual species. Marine protected areas may provide refugia where populations can persist despite changing conditions, but their effectiveness depends on adequate size and connectivity. International cooperation is essential to address the global nature of these challenges. Our data underscore the urgency of reducing greenhouse gas emissions to limit further warming. Even under optimistic scenarios, continued monitoring will be necessary to track ecosystem responses and inform adaptive management approaches. Future research should investigate genetic and epigenetic mechanisms that may confer resilience to some populations. Understanding these processes could guide restoration efforts and help predict which ecosystems are most vulnerable to ongoing environmental change.",
+    "truth": {
+      "source": "human",
+      "model_detail": "Written by a marine biologist",
+      "shade_hex": "#4A90E2"
+    }
+  }
+]
