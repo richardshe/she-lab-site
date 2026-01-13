@@ -1,0 +1,35 @@
+[
+  {
+    "id": "S01",
+    "section": "abstract",
+    "title": "Neural crest migration",
+    "text": "Neural crest cells migrate extensively during early development, contributing to diverse tissue types including peripheral neurons and craniofacial cartilage. Here we traced migration paths in a chick embryo model using fluorescent labeling. We observed a consistent dorsal route with transient pauses near the somite boundary. These pauses coincided with elevated expression of extracellular matrix genes and were absent when matrix remodeling was inhibited. Our results suggest a checkpoint-like phase that coordinates migration timing with local microenvironmental remodeling.",
+    "truth": {
+      "source": "human",
+      "model_detail": "Lab notes excerpt",
+      "shade_hex": "#2f855a"
+    }
+  },
+  {
+    "id": "S02",
+    "section": "intro",
+    "title": "Cortical organoids",
+    "text": "Cortical organoids have emerged as a scalable system to study human-specific neurodevelopment. By recapitulating early neurogenesis in vitro, these models enable systematic perturbation of candidate genes and pathways that are otherwise inaccessible in vivo. Yet organoid studies face challenges in reproducibility, cellular maturity, and long-range circuit formation. Recent advances in media optimization and assembloid fusion offer promising directions to address these limitations while preserving human-relevant developmental timing.",
+    "truth": {
+      "source": "chatgpt",
+      "model_detail": "GPT-4.1",
+      "shade_hex": "#4c51bf"
+    }
+  },
+  {
+    "id": "S03",
+    "section": "discussion",
+    "title": "Gene dosage",
+    "text": "The phenotypic effects of gene dosage changes in neurodevelopmental pathways are rarely linear. Small increases in expression can yield disproportionate shifts in progenitor fate, likely reflecting threshold dynamics in feedback networks. In our discussion, we highlight that dosage sensitivity appears most pronounced during mid-neurogenesis, when progenitor pools are maximally plastic. These observations underscore the need for time-resolved perturbation strategies when interpreting dosage-associated risk variants.",
+    "truth": {
+      "source": "claude",
+      "model_detail": "Claude 3.5 Sonnet",
+      "shade_hex": "#b83280"
+    }
+  }
+]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spot the Bot polls and aggregate results." />
+  <title>Spot the Bot Polls | The She Lab</title>
+  <link rel="stylesheet" href="styles.css?v=spotbot-1" />
+</head>
+<body data-spot-page="polls">
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left"><a href="index.html">THE SHE LAB</a></div>
+      <div class="navbar-right">
+        <button id="nav-toggle" aria-label="Menu">☰</button>
+        <nav>
+          <a href="research.html">Research</a>
+          <a href="people.html">People</a>
+          <a href="publications.html">Publications</a>
+          <a href="join.html">Join The Lab</a>
+          <a href="spot-the-bot.html">Spot the Bot</a>
+        </nav>
+        <img src="assets/images/NTU_Logo_brightened.png" alt="NTU Logo" class="ntu-logo" />
+      </div>
+    </div>
+  </header>
+
+  <main class="spot-wrapper" data-spot="polls">
+    <section class="spot-card">
+      <header class="spot-header">
+        <h1>Spot the Bot Polls</h1>
+        <p>Aggregate results update as new guesses come in.</p>
+        <a class="spot-button spot-button--ghost" href="spot-the-bot.html">Back to game</a>
+      </header>
+
+      <div class="spot-overall" data-spot="overall"></div>
+
+      <h2 class="spot-subheading">Your session stats</h2>
+      <div class="spot-session-grid" data-spot="session-summary"></div>
+
+      <h2 class="spot-subheading">Guessed “Bot” by true source</h2>
+      <div class="spot-sources" data-spot="sources"></div>
+
+      <h2 class="spot-subheading">Per-sample breakdown</h2>
+      <div class="spot-table-wrap">
+        <table class="spot-table">
+          <thead>
+            <tr>
+              <th>Item ID</th>
+              <th>Section</th>
+              <th>True source</th>
+              <th>Total votes</th>
+              <th>% guessed bot</th>
+            </tr>
+          </thead>
+          <tbody data-spot="items">
+            <tr><td colspan="5">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> The She Lab. All rights reserved.</p>
+  </footer>
+
+  <script src="spot-the-bot.js"></script>
+  <script>
+    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.navbar-right nav');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    }
+  </script>
+</body>
+</html>
