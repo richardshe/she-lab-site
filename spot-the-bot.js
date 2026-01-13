@@ -45,93 +45,6 @@
     return generated;
   };
 
-  const clearSessionStats = () => {
-    const sessionId = getSessionId();
-    localStorage.removeItem('spotTheBotSession');
-    localStorage.removeItem(getSessionStatsKey(sessionId));
-  };
-
-  const getSessionStatsKey = (sessionId) => `spotTheBotSessionStats:${sessionId}`;
-
-  const getSessionStats = () => {
-    const sessionId = getSessionId();
-    const stored = localStorage.getItem(getSessionStatsKey(sessionId));
-    if (stored) {
-      try {
-        return JSON.parse(stored);
-      } catch (error) {
-        // ignore malformed stats
-      }
-    }
-    return { total: 0, correct: 0, human: 0, bot: 0 };
-  };
-
-  const saveSessionStats = (stats) => {
-    const sessionId = getSessionId();
-    localStorage.setItem(getSessionStatsKey(sessionId), JSON.stringify(stats));
-  };
-
-  const renderSessionStats = (stats, target) => {
-    if (!target) return;
-    const accuracy = stats.total ? Math.round((stats.correct / stats.total) * 100) : 0;
-    const correctWidth = stats.total ? Math.round((stats.correct / stats.total) * 100) : 0;
-    const incorrectWidth = stats.total ? 100 - correctWidth : 0;
-    target.innerHTML = `
-      <div class="spot-session-stat">
-        <h3>${stats.total}</h3>
-        <p>Guesses this session</p>
-      </div>
-      <div class="spot-session-stat">
-        <h3>${accuracy}%</h3>
-        <p>Accuracy</p>
-      </div>
-      <div class="spot-session-stat">
-        <h3>${stats.human}</h3>
-        <p>Guessed human</p>
-      </div>
-      <div class="spot-session-stat">
-        <h3>${stats.bot}</h3>
-        <p>Guessed bot</p>
-      </div>
-      <div class="spot-session-chart" role="img" aria-label="Session accuracy chart">
-        <span class="spot-session-bar spot-session-bar--correct" style="width:${correctWidth}%">
-          ${correctWidth}% correct
-        </span>
-        <span class="spot-session-bar spot-session-bar--incorrect" style="width:${incorrectWidth}%">
-          ${incorrectWidth}% incorrect
-        </span>
-      </div>
-    `;
-  };
-
-  const updateSessionStatsUI = () => {
-    const stats = getSessionStats();
-    renderSessionStats(stats, qs('[data-spot="session-stats"]'));
-    renderSessionStats(stats, qs('[data-spot="session-summary"]'));
-  };
-
-  const normalizePassageText = (text) => {
-    const replacements = {
-      '\\alpha': 'α',
-      '\\beta': 'β',
-      '\\gamma': 'γ',
-      '\\delta': 'δ',
-      '\\epsilon': 'ε',
-      '\\theta': 'θ',
-      '\\lambda': 'λ',
-      '\\mu': 'μ',
-      '\\pi': 'π',
-      '\\sigma': 'σ',
-      '\\omega': 'ω'
-    };
-    let normalized = text;
-    Object.entries(replacements).forEach(([latex, symbol]) => {
-      const pattern = new RegExp(`\\$${latex}\\$`, 'g');
-      normalized = normalized.replace(pattern, symbol);
-    });
-    return normalized;
-  };
-
   const pickRandomItem = () => {
     if (!state.items.length) return null;
     if (state.usedIds.size >= state.items.length) {
@@ -153,7 +66,7 @@
 
     if (!passageEl) return;
 
-    passageEl.textContent = normalizePassageText(item.text);
+    passageEl.textContent = item.text;
     sectionEl.textContent = item.section.toUpperCase();
     statusEl.textContent = '';
     statusEl.className = 'spot-feedback';
@@ -244,15 +157,6 @@
 
     renderReveal(item, guess);
 
-    const isCorrect = guess === (item.truth.source === 'human' ? 'human' : 'bot');
-    const stats = getSessionStats();
-    stats.total += 1;
-    stats.correct += isCorrect ? 1 : 0;
-    stats.human += guess === 'human' ? 1 : 0;
-    stats.bot += guess === 'bot' ? 1 : 0;
-    saveSessionStats(stats);
-    updateSessionStatsUI();
-
     const durationMs = startTime ? Date.now() - startTime : null;
     const voteResult = await postVote({ item, guess, durationMs });
     if (!voteResult) return;
@@ -271,7 +175,7 @@
     if (!passageEl) return;
 
     try {
-    const response = await fetch(getDataUrl());
+      const response = await fetch(getDataUrl());
       if (!response.ok) throw new Error('Failed to load data');
       const items = await response.json();
       state.items = items;
@@ -288,17 +192,9 @@
     }
 
     let startTime = Date.now();
-    updateSessionStatsUI();
 
     qsa('[data-spot="guess"]').forEach((button) => {
       button.addEventListener('click', () => handleGuess(button.dataset.guess, startTime));
-    });
-
-    qsa('[data-spot="reset-session"]').forEach((button) => {
-      button.addEventListener('click', () => {
-        clearSessionStats();
-        updateSessionStatsUI();
-      });
     });
 
     const nextButton = qs('[data-spot="next"]');
@@ -374,14 +270,6 @@
 
     const stats = await fetchStats();
     renderPolls(stats || {});
-    updateSessionStatsUI();
-
-    qsa('[data-spot="reset-session"]').forEach((button) => {
-      button.addEventListener('click', () => {
-        clearSessionStats();
-        updateSessionStatsUI();
-      });
-    });
   };
 
   document.addEventListener('DOMContentLoaded', () => {

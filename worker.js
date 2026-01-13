@@ -5,7 +5,6 @@ const jsonResponse = (data, status = 200) => {
     status,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'no-store',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
@@ -55,6 +54,7 @@ const handleVote = async (request, env) => {
   if (!body) return jsonResponse({ error: 'Invalid JSON' }, 400);
 
   const { item_id, guess, section, truth_source, client_id, session_id, time_ms } = body;
+  const { item_id, guess, section, truth_source, client_id, time_ms } = body;
   if (!item_id || !guess || !section || !truth_source || !client_id) {
     return jsonResponse({ error: 'Missing required fields' }, 400);
   }
@@ -78,6 +78,11 @@ const handleVote = async (request, env) => {
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
   )
     .bind(item_id, client_id, session_id || null, guess, section, truth_source, country, colo, time_ms || null, now)
+  await env.DB.prepare(
+    `INSERT INTO votes (item_id, client_id, guess, section, truth_source, time_ms, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`
+  )
+    .bind(item_id, client_id, guess, section, truth_source, time_ms || null, now)
     .run();
 
   return jsonResponse({ status: 'ok' });
