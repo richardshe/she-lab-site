@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS votes (
   truth_source TEXT NOT NULL,
   country TEXT,
   colo TEXT,
+  guess TEXT NOT NULL,
+  section TEXT NOT NULL,
+  truth_source TEXT NOT NULL,
   time_ms INTEGER,
   created_at INTEGER NOT NULL
 );
