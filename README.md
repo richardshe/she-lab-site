@@ -64,3 +64,21 @@ Then visit:
 - `http://127.0.0.1:8787/spot-the-bot-polls.html`
 
 The frontend works without the worker (votes will just fail silently).
+
+### Build the JSON dataset from .txt files
+
+If you have files like `gpt1_abstract.txt`, `claude2_noIntro.txt`, or `human10_noDiscussion.txt`,
+you can convert them into the JSON schema with the helper script:
+
+```bash
+python scripts/spot_the_bot_build_json.py /path/to/txt/files -o spot-the-bot-data.json
+```
+
+Filename conventions expected by the script:
+
+- `<source><number>_abstract.txt` → section `abstract`
+- `<source><number>_noDiscussion.txt` → section `intro`
+- `<source><number>_noIntro.txt` → section `discussion`
+
+Valid sources are `gpt`, `claude`, `gemini`, and `human`. Update the model details or colors in
+`scripts/spot_the_bot_build_json.py` if needed.
