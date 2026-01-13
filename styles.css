@@ -685,6 +685,10 @@ body.research-page .hero-image {
   flex-wrap:wrap;
 }
 .spot-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
   border:none;
   border-radius:999px;
   padding:.85rem 1.75rem;
@@ -700,6 +704,11 @@ body.research-page .hero-image {
 .spot-button[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none;}
 .spot-button--bot{background:#6E4AD1;}
 .spot-button--secondary{background:#4a5568;}
+.spot-button--ghost{
+  background:transparent;
+  color:#111;
+  border:2px solid #111;
+}
 .spot-button.is-selected{box-shadow:0 0 0 3px rgba(110,74,209,.35);}
 .spot-reveal{display:flex;flex-direction:column;gap:.5rem;}
 .spot-badge{
@@ -721,7 +730,7 @@ body.research-page .hero-image {
 .spot-feedback{font-size:1rem;}
 .spot-feedback--correct{color:#2f855a;}
 .spot-feedback--incorrect{color:#c53030;}
-.spot-footer{display:flex;justify-content:flex-end;}
+.spot-footer{display:flex;justify-content:flex-end;gap:1rem;flex-wrap:wrap;}
 
 .spot-overall{
   display:grid;

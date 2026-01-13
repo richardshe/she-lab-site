@@ -1,5 +1,4 @@
 (() => {
-  const DATA_URL = 'spot-the-bot-data.json';
   const API_BASE = '/api';
   const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -146,12 +145,17 @@
     updateItemStats(stats, item.id);
   };
 
+  const getDataUrl = () => {
+    const body = document.body;
+    return (body && body.dataset.spotData) || 'spot-the-bot-data.json';
+  };
+
   const initGamePage = async () => {
     const passageEl = qs('[data-spot="passage"]');
     if (!passageEl) return;
 
     try {
-      const response = await fetch(DATA_URL);
+      const response = await fetch(getDataUrl());
       if (!response.ok) throw new Error('Failed to load data');
       const items = await response.json();
       state.items = items;
@@ -159,7 +163,11 @@
       if (!state.current) throw new Error('No items found');
       updatePassage(state.current);
     } catch (error) {
-      passageEl.textContent = 'Unable to load passages. Please try again later.';
+      const hint =
+        window.location.protocol === 'file:'
+          ? 'Tip: serve the site with a local web server (e.g., `python -m http.server`).'
+          : 'Please check that spot-the-bot-data.json is in the same folder as this page.';
+      passageEl.textContent = `Unable to load passages. ${hint}`;
       return;
     }
 
