@@ -1,4 +1,4 @@
-name = "she-lab-site"
+name = "she-lab-spot-the-bot"
 main = "worker.js"
 compatibility_date = "2024-07-01"
 

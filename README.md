@@ -24,12 +24,6 @@ CREATE TABLE IF NOT EXISTS votes (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   item_id TEXT NOT NULL,
   client_id TEXT NOT NULL,
-  session_id TEXT,
-  guess TEXT NOT NULL,
-  section TEXT NOT NULL,
-  truth_source TEXT NOT NULL,
-  country TEXT,
-  colo TEXT,
   guess TEXT NOT NULL,
   section TEXT NOT NULL,
   truth_source TEXT NOT NULL,
@@ -46,14 +40,6 @@ Run with:
 wrangler d1 execute spot-the-bot --file ./schema.sql
 ```
 
-If you are migrating an existing database, run:
-
-```sql
-ALTER TABLE votes ADD COLUMN session_id TEXT;
-ALTER TABLE votes ADD COLUMN country TEXT;
-ALTER TABLE votes ADD COLUMN colo TEXT;
-```
-
 4. Deploy the worker:
 
 ```bash
@@ -65,15 +51,6 @@ wrangler deploy
 ```toml
 # in wrangler.toml
 routes = ["https://www.yourdomain.com/api/*"]
-```
-
-### Resetting votes after testing
-
-Set a reset token in `wrangler.toml` and redeploy, then POST to the reset endpoint:
-
-```bash
-curl -X POST "https://www.yourdomain.com/api/reset" \\
-  -H "x-reset-token: YOUR_RESET_TOKEN"
 ```
 
 ### Local testing

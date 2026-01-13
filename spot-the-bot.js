@@ -26,25 +26,6 @@
     return generated;
   };
 
-  const getSessionId = () => {
-    const now = Date.now();
-    const stored = localStorage.getItem('spotTheBotSession');
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        if (parsed?.id && parsed?.expires_at && now < parsed.expires_at) {
-          return parsed.id;
-        }
-      } catch (error) {
-        // ignore malformed session
-      }
-    }
-    const generated = (crypto.randomUUID && crypto.randomUUID()) || `session-${now}-${Math.random().toString(16).slice(2)}`;
-    const expires_at = now + (30 * 60 * 1000);
-    localStorage.setItem('spotTheBotSession', JSON.stringify({ id: generated, expires_at }));
-    return generated;
-  };
-
   const pickRandomItem = () => {
     if (!state.items.length) return null;
     if (state.usedIds.size >= state.items.length) {
@@ -105,7 +86,6 @@
       section: item.section,
       truth_source: item.truth.source,
       client_id: getClientId(),
-      session_id: getSessionId(),
       time_ms: durationMs
     };
 
