@@ -41,6 +41,10 @@ export default {
       return handleStats(env);
     }
 
+    if (url.pathname === '/api/reset' && request.method === 'POST') {
+      return handleReset(request, env);
+    }
+
     return jsonResponse({ error: 'Not found' }, 404);
   }
 };
@@ -49,6 +53,7 @@ const handleVote = async (request, env) => {
   const body = await request.json().catch(() => null);
   if (!body) return jsonResponse({ error: 'Invalid JSON' }, 400);
 
+  const { item_id, guess, section, truth_source, client_id, session_id, time_ms } = body;
   const { item_id, guess, section, truth_source, client_id, time_ms } = body;
   if (!item_id || !guess || !section || !truth_source || !client_id) {
     return jsonResponse({ error: 'Missing required fields' }, 400);
@@ -65,6 +70,14 @@ const handleVote = async (request, env) => {
     return jsonResponse({ status: 'ignored', reason: 'duplicate' }, 200);
   }
 
+  const country = request.cf?.country || null;
+  const colo = request.cf?.colo || null;
+
+  await env.DB.prepare(
+    `INSERT INTO votes (item_id, client_id, session_id, guess, section, truth_source, country, colo, time_ms, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+  )
+    .bind(item_id, client_id, session_id || null, guess, section, truth_source, country, colo, time_ms || null, now)
   await env.DB.prepare(
     `INSERT INTO votes (item_id, client_id, guess, section, truth_source, time_ms, created_at)
      VALUES (?, ?, ?, ?, ?, ?, ?)`
@@ -133,4 +146,16 @@ const handleStats = async (env) => {
     bySource,
     byItem
   });
+};
+
+const handleReset = async (request, env) => {
+  const url = new URL(request.url);
+  const token = request.headers.get('x-reset-token') || url.searchParams.get('token');
+
+  if (!env.RESET_TOKEN || token !== env.RESET_TOKEN) {
+    return jsonResponse({ error: 'Unauthorized' }, 403);
+  }
+
+  await env.DB.prepare('DELETE FROM votes').run();
+  return jsonResponse({ status: 'ok' });
 };
