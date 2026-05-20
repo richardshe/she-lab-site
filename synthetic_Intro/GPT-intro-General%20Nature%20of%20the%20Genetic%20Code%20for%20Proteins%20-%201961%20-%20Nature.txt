@@ -1,7 +1,0 @@
-# Introduction [216 words]
-
-It is now generally supposed that the sequence of bases in the nucleic acid of a gene determines, by some rule or code, the sequence of amino-acids in the corresponding protein. The nature of this rule is still obscure. In particular, it is not known how many bases are required to specify one amino-acid, whether successive coding units overlap, or how the correct reading of the message is maintained along the length of the gene.
-
-Several theoretical schemes have been proposed. Some require that neighbouring amino-acids should be specified by overlapping groups of bases. Others suppose that the message contains special punctuation marks, or that only certain groups of bases have meaning. A further possibility is that the message is read from a fixed point in successive groups, so that an addition or deletion of bases would disturb the reading of all following groups until a compensating alteration restored the proper register.
-
-This last idea gives a simple genetic test. Mutations produced by acridines appear to add or remove bases, and such mutations should therefore be suppressible by a second nearby alteration of the opposite kind. We describe here experiments in the rII region of bacteriophage T4 which test this prediction, and which bear directly on the size and general character of the genetic code.

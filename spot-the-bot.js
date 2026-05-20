@@ -355,7 +355,7 @@
 
   const getDataUrl = () => {
     const body = document.body;
-    return (body && body.dataset.spotData) || 'spot-the-bot-data.json';
+    return (body && body.dataset.spotData) || './spot-the-bot-data.json';
   };
 
   const initGamePage = async () => {
@@ -375,10 +375,11 @@
       updatePassage(state.current);
     } catch (error) {
       const hint =
-        window.location.protocol === 'file:'
+        window.location.protocol.startsWith('file')
           ? 'Tip: serve the site with a local web server (e.g., `python -m http.server`).'
-          : 'Please check that spot-the-bot-data.json is in the same folder as this page.';
+          : `Please check that spot-the-bot-data.json is in the same folder. Details: ${error.message}`;
       passageEl.textContent = `Unable to load passages. ${hint}`;
+      console.error('Data load error:', error);
       return;
     }
 
