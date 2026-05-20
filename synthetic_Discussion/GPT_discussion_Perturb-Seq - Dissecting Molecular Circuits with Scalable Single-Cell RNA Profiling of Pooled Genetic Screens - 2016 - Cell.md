@@ -1,0 +1,1 @@
+Perturb-seq links pooled genetic perturbation to rich single-cell transcriptional phenotypes, enabling scalable inference of gene function, cell states, and interactions. As sequencing improves, this framework should extend from targeted regulatory circuits to larger combinatorial maps of genotype-to-phenotype relationships.

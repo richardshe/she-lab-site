@@ -1,0 +1,3 @@
+# Abstract
+
+The genetic control of spatial organization during embryonic development is poorly understood. Through a systematic screen for zygotic lethal mutations affecting the segmental pattern of the Drosophila larva, we have identified fifteen loci required for normal metameric subdivision. These mutations fall into three distinct classes: segment polarity mutants, which duplicate sub-segmental patterns; pair-rule mutants, which delete alternating segmental regions; and gap mutants, which eliminate contiguous blocks of segments. These distinct phenotypes indicate that embryonic segmentation involves multiple hierarchical units of spatial organization.

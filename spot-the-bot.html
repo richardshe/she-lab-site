@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Spot the Bot game: guess whether a passage was written by a human or a language model." />
+  <meta name="description" content="Spot the Bot game: decide whether a scientific paper passage is human-written or AI-generated." />
   <title>Spot the Bot | The She Lab</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -26,27 +26,51 @@
   </header>
 
   <main class="spot-wrapper">
-    <section class="spot-card">
-      <header class="spot-header">
-        <h1>Spot the Bot</h1>
-        <p>Read the passage and decide if it was written by a human or an AI assistant.</p>
+    <section class="spot-card" aria-labelledby="spot-game-title">
+      <header class="spot-game-header">
+        <h1 id="spot-game-title">Spot the Bot</h1>
+        <p>Read the paper excerpt and decide whether this section came from the original article or an AI-generated imitation.</p>
       </header>
 
-      <div class="spot-meta">
-        <span class="spot-section" data-spot="section">ABSTRACT</span>
-        <span class="spot-status" data-spot="status"></span>
-      </div>
+      <article class="spot-article" data-spot="article">
+        <header class="spot-journal-header" data-spot="journal-header">
+          <div class="spot-journal-wordmark" data-spot="journal-logo">Journal</div>
+          <div class="spot-journal-meta" data-spot="journal-meta">Article</div>
+          <h2 class="spot-paper-title" data-spot="paper-title">Loading paper…</h2>
+          <div class="spot-paper-meta" data-spot="paper-meta"></div>
+        </header>
 
-      <div class="spot-passage" data-spot="passage" tabindex="0" aria-label="Passage to evaluate"></div>
+        <div class="spot-section-rail" aria-label="Displayed paper section">
+          <span class="spot-section-tab" data-spot-section-tab="abstract">Abstract</span>
+          <span class="spot-section-tab" data-spot-section-tab="intro">Introduction</span>
+          <span class="spot-section-tab" data-spot-section-tab="discussion">Discussion</span>
+        </div>
 
-      <div class="spot-actions">
+        <div class="spot-passage" data-spot="passage" tabindex="0" aria-label="Passage to evaluate"></div>
+      </article>
+
+      <div class="spot-actions" aria-label="Your guess">
         <button class="spot-button" data-spot="guess" data-guess="human">Human-written</button>
         <button class="spot-button spot-button--bot" data-spot="guess" data-guess="bot">Bot-written</button>
       </div>
 
-      <div class="spot-reveal">
-        <span class="spot-badge" data-spot="badge"></span>
-        <span class="spot-model" data-spot="model"></span>
+      <div class="spot-reveal" data-spot="reveal" hidden>
+        <div class="spot-result-line">
+          <span class="spot-status" data-spot="status"></span>
+          <span class="spot-badge" data-spot="badge"></span>
+          <span class="spot-model" data-spot="model"></span>
+        </div>
+
+        <section class="spot-human-reveal" data-spot="human-reveal" hidden>
+          <h3>Original human version</h3>
+          <div class="spot-reveal-text" data-spot="human-text"></div>
+        </section>
+
+        <section class="spot-context" data-spot="context" hidden>
+          <h3>Why this paper matters</h3>
+          <p data-spot="context-text"></p>
+        </section>
+
         <p class="spot-item-stats" data-spot="item-stats"></p>
       </div>
 

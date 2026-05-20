@@ -1,0 +1,3 @@
+# Abstract
+
+The mouse obese (ob) mutation causes profound obesity and type II diabetes, but its molecular basis has remained unknown. Using positional cloning, we have isolated the mouse ob gene and its human homologue. The ob gene encodes a 4.5-kilobase messenger RNA expressed specifically in white adipose tissue, translating into a highly conserved 167-amino-acid secreted protein. A nonsense mutation in the C57BL/6J ob/ob strain disrupts this protein. These findings suggest that the ob gene product functions as a circulating factor, signaling from adipose tissue to regulate body fat mass.

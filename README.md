@@ -65,20 +65,23 @@ Then visit:
 
 The frontend works without the worker (votes will just fail silently).
 
-### Build the JSON dataset from .txt files
+### Reset votes for a new dataset
 
-If you have files like `gpt1_abstract.txt`, `claude2_noIntro.txt`, or `human10_noDiscussion.txt`,
-you can convert them into the JSON schema with the helper script:
+When replacing the Spot the Bot corpus, manually clear the old D1 rows so the public stats start fresh:
 
 ```bash
-python scripts/spot_the_bot_build_json.py /path/to/txt/files -o spot-the-bot-data.json
+wrangler d1 execute spot-the-bot --remote --command "DELETE FROM votes"
 ```
 
-Filename conventions expected by the script:
+### Build the JSON dataset from the paper corpus
 
-- `<source><number>_abstract.txt` → section `abstract`
-- `<source><number>_noDiscussion.txt` → section `intro`
-- `<source><number>_noIntro.txt` → section `discussion`
+The helper script reads human originals from `cleaned_paper_text_docling`, synthetic passages from
+`synthetic_Abstract`, `synthetic_Intro`, and `synthetic_Discussion`, and historical blurbs from
+`paper_historical_contexts.md`.
 
-Valid sources are `gpt`, `claude`, `gemini`, and `human`. Update the model details or colors in
-`scripts/spot_the_bot_build_json.py` if needed.
+```bash
+python scripts/spot_the_bot_build_json.py . -o spot-the-bot-data.json
+```
+
+The game uses `journal_rendering_guide.md` as the styling reference for the custom journal title
+headers in `spot-the-bot.js` and `styles.css`.

@@ -194,21 +194,12 @@ body.pub-page .pub-list a:hover{color:#8dd7ff;border-color:#8dd7ff;}
 /* ===== People Page ===== */
 body.people-page{background:#fff;color:#000;}
 .people-wrapper{padding-top:9rem;padding-bottom:7rem;text-align:center;}
-.people-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2.5rem;margin-top:3rem;max-width:1080px;margin-left:auto;margin-right:auto;}
+.people-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:4rem;margin-top:3rem;}
 .person-card{max-width:220px;display:flex;flex-direction:column;align-items:center;gap:1rem;}
 .avatar{width:220px;height:220px;border-radius:50%;overflow:hidden;}
 .avatar img{width:100%;height:100%;object-fit:cover;}
-.avatar-kai{object-position:center 35%;}
 .person-card h2{font-size:1.25rem;font-weight:600;margin:0;}
 .person-card .role{font-size:1.05rem;color:#555;margin:0;}
-
-@media (max-width: 960px){
-  .people-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-}
-
-@media (max-width: 560px){
-  .people-grid{grid-template-columns:1fr;gap:2rem;}
-}
 
 body.people-page h1{font-size:1.8rem;margin-bottom:2rem;}
 
@@ -643,49 +634,211 @@ body.research-page .hero-image {
   padding:8rem 1.5rem 5rem;
   display:flex;
   justify-content:center;
-  background:var(--clr-mid);
+  background:#f1f2f0;
   min-height:100vh;
 }
 .spot-card{
   background:#fff;
-  border-radius:16px;
-  box-shadow:0 20px 50px rgba(0,0,0,.08);
-  padding:2.5rem;
-  width:min(900px, 100%);
+  border:1px solid #dedede;
+  border-radius:8px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+  padding:2rem;
+  width:min(980px, 100%);
   display:flex;
   flex-direction:column;
-  gap:1.5rem;
+  gap:1.35rem;
 }
-.spot-header h1{
-  font-size:2.4rem;
-  margin-bottom:.5rem;
+.spot-game-header{
+  border-bottom:1px solid #e6e6e6;
+  padding-bottom:1.2rem;
 }
-.spot-header p{max-width:60ch;color:#444;}
-.spot-meta{
+.spot-game-header h1{
+  font-size:2rem;
+  margin-bottom:.35rem;
+  letter-spacing:0;
+}
+.spot-game-header p{
+  max-width:68ch;
+  color:#444;
+  font-size:1rem;
+}
+.spot-article{
+  border:1px solid #d7d7d7;
+  border-radius:6px;
+  background:#fff;
+  overflow:hidden;
+}
+.spot-journal-header{
+  padding:2rem 2rem 1.4rem;
+}
+.spot-journal-wordmark{
+  width:fit-content;
+  min-height:40px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:1rem;
-  flex-wrap:wrap;
+  color:#1a1a1a;
+  line-height:1;
+  letter-spacing:0;
+  margin-bottom:1.2rem;
 }
-.spot-section{
-  font-size:.75rem;
+.spot-journal-meta{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:.78rem;
   font-weight:700;
-  letter-spacing:.12em;
-  background:#111;
-  color:#fff;
-  padding:.35rem .75rem;
-  border-radius:999px;
+  color:#666;
+  text-transform:uppercase;
+  letter-spacing:0;
+  margin-bottom:.65rem;
 }
-.spot-status{font-weight:700;}
+.spot-paper-title{
+  color:#1a1a1a;
+  margin:0;
+  letter-spacing:0;
+}
+.spot-paper-meta{
+  margin-top:.9rem;
+  color:#555;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:.92rem;
+  font-weight:700;
+}
+.spot-journal--nature .spot-journal-header,
+.spot-journal--science .spot-journal-header,
+.spot-journal--pnas .spot-journal-header{
+  text-align:left;
+}
+.spot-journal--nature .spot-journal-wordmark{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2.25rem;
+  font-weight:900;
+  text-transform:lowercase;
+}
+.spot-journal--nature .spot-paper-title{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2rem;
+  font-weight:700;
+  line-height:1.1;
+}
+.spot-journal--nature-methods .spot-journal-wordmark,
+.spot-journal--nature-methods .spot-journal-meta{
+  color:#025E8D;
+}
+.spot-journal--nature-neuroscience .spot-journal-wordmark,
+.spot-journal--nature-neuroscience .spot-journal-meta{
+  color:#111;
+}
+.spot-journal--science .spot-journal-wordmark{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2.3rem;
+  font-weight:900;
+}
+.spot-journal--science .spot-paper-title{
+  font-family:var(--font-headline), Georgia, "Times New Roman", serif;
+  font-size:2.05rem;
+  font-weight:900;
+  line-height:1.1;
+}
+.spot-journal--cell .spot-journal-header,
+.spot-journal--cell-press .spot-journal-header{
+  border-top:4px solid #E31B23;
+  font-family:"Avenir Next", Helvetica, Arial, sans-serif;
+  text-align:left;
+}
+.spot-journal--cell .spot-journal-wordmark,
+.spot-journal--cell-press .spot-journal-wordmark{
+  font-family:"Avenir Next", Helvetica, Arial, sans-serif;
+  font-size:2.2rem;
+  font-weight:800;
+}
+.spot-journal--cell .spot-paper-title,
+.spot-journal--cell-press .spot-paper-title{
+  font-family:"Avenir Next", Helvetica, Arial, sans-serif;
+  font-size:2.15rem;
+  font-weight:800;
+  line-height:1.05;
+  color:#222;
+}
+.spot-journal--neuron .spot-journal-header{border-top-color:#222;}
+.spot-journal--immunity .spot-journal-header{border-top-color:#005596;}
+.spot-journal--immunity .spot-journal-wordmark,
+.spot-journal--immunity .spot-journal-meta{color:#005596;}
+.spot-journal--molecular-therapy .spot-journal-header{border-top-color:#00859B;}
+.spot-journal--molecular-therapy .spot-journal-wordmark,
+.spot-journal--molecular-therapy .spot-journal-meta{color:#00859B;}
+.spot-journal--pnas .spot-journal-wordmark{
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:2rem;
+  font-weight:800;
+}
+.spot-journal--pnas .spot-paper-title{
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:1.82rem;
+  line-height:1.1;
+  font-weight:700;
+}
+.spot-journal--nejm .spot-journal-header{
+  text-align:center;
+  padding-top:2.4rem;
+}
+.spot-journal--nejm .spot-journal-wordmark{
+  margin-left:auto;
+  margin-right:auto;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.65rem;
+  font-weight:700;
+}
+.spot-journal--nejm .spot-journal-meta{
+  color:#DF6C4F;
+}
+.spot-journal--nejm .spot-paper-title{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2.35rem;
+  font-weight:700;
+  line-height:1.15;
+}
+.spot-journal--generic .spot-paper-title{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2rem;
+  line-height:1.12;
+}
+.spot-section-rail{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border-top:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  background:#f7f7f5;
+}
+.spot-section-tab{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:.75rem 1rem;
+  border-right:1px solid #d7d7d7;
+  color:#5a5a5a;
+  font-size:.9rem;
+  font-weight:700;
+  letter-spacing:0;
+}
+.spot-section-tab:last-child{border-right:0;}
+.spot-section-tab.is-active{
+  color:#111;
+  background:#fff;
+  box-shadow:inset 0 -3px 0 #111;
+}
+.spot-section-tab.is-unavailable{
+  color:#aaa;
+}
 .spot-passage{
-  border:1px solid #e2e8f0;
-  border-radius:12px;
-  padding:1.5rem;
-  max-height:320px;
+  padding:1.65rem 2rem 2rem;
+  min-height:260px;
+  max-height:430px;
   overflow-y:auto;
-  background:#fdfdfd;
-  line-height:1.65;
+  background:#fff;
+  color:#1f1f1f;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.02rem;
+  line-height:1.68;
   white-space:pre-wrap;
 }
 .spot-actions{
@@ -699,8 +852,8 @@ body.research-page .hero-image {
   justify-content:center;
   text-decoration:none;
   border:none;
-  border-radius:999px;
-  padding:.85rem 1.75rem;
+  border-radius:6px;
+  padding:.85rem 1.5rem;
   font-size:1rem;
   font-weight:600;
   cursor:pointer;
@@ -711,7 +864,7 @@ body.research-page .hero-image {
 .spot-button:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.15);}
 .spot-button:focus{outline:3px solid rgba(110,74,209,.35);outline-offset:2px;}
 .spot-button[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none;}
-.spot-button--bot{background:#6E4AD1;}
+.spot-button--bot{background:#5f48bd;}
 .spot-button--secondary{background:#4a5568;}
 .spot-button--ghost{
   background:transparent;
@@ -719,7 +872,28 @@ body.research-page .hero-image {
   border:2px solid #111;
 }
 .spot-button.is-selected{box-shadow:0 0 0 3px rgba(110,74,209,.35);}
-.spot-reveal{display:flex;flex-direction:column;gap:.5rem;}
+.spot-reveal{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  border-top:1px solid #e3e3e3;
+  padding-top:1.25rem;
+}
+.spot-reveal[hidden],
+.spot-human-reveal[hidden],
+.spot-context[hidden]{
+  display:none;
+}
+.spot-result-line{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  flex-wrap:wrap;
+}
+.spot-status{
+  font-size:1rem;
+  font-weight:800;
+}
 .spot-badge{
   display:inline-flex;
   align-items:center;
@@ -735,8 +909,27 @@ body.research-page .hero-image {
 }
 .spot-badge.is-visible{opacity:1;transform:translateY(0);}
 .spot-model{font-size:.95rem;color:#4a5568;}
+.spot-human-reveal,
+.spot-context{
+  border:1px solid #e2e2e2;
+  border-radius:6px;
+  background:#fbfbfa;
+  padding:1rem 1.2rem;
+}
+.spot-human-reveal h3,
+.spot-context h3{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  margin-bottom:.55rem;
+}
+.spot-reveal-text,
+.spot-context p{
+  color:#2b2b2b;
+  font-size:.98rem;
+  line-height:1.62;
+  white-space:pre-wrap;
+}
 .spot-item-stats{font-size:.95rem;color:#2d3748;}
-.spot-feedback{font-size:1rem;}
 .spot-feedback--correct{color:#2f855a;}
 .spot-feedback--incorrect{color:#c53030;}
 .spot-footer{display:flex;justify-content:flex-end;gap:1rem;flex-wrap:wrap;}
@@ -748,29 +941,51 @@ body.research-page .hero-image {
 }
 .spot-stat{
   background:#f7fafc;
-  border-radius:12px;
+  border-radius:8px;
   padding:1rem 1.25rem;
   text-align:center;
 }
-.spot-stat h3{font-size:2rem;}
+.spot-stat h3{font-size:2rem;letter-spacing:0;}
 .spot-sources{display:grid;gap:1rem;}
 .spot-source{
   display:flex;
   align-items:center;
   gap:1rem;
   background:#f7fafc;
-  border-radius:12px;
+  border-radius:8px;
   padding:1rem 1.25rem;
 }
-.spot-subheading{font-size:1.4rem;margin-top:1rem;}
+.spot-subheading{font-size:1.4rem;margin-top:1rem;letter-spacing:0;}
 .spot-table-wrap{overflow-x:auto;}
 .spot-table{width:100%;border-collapse:collapse;font-size:.95rem;}
 .spot-table th,.spot-table td{padding:.75rem;border-bottom:1px solid #e2e8f0;text-align:left;}
 .spot-table th{background:#f7fafc;font-weight:700;}
 
 @media(max-width:700px){
-  .spot-card{padding:1.5rem;}
-  .spot-passage{max-height:360px;}
+  .spot-wrapper{padding:6.75rem 1rem 4rem;}
+  .spot-card{padding:1rem;gap:1rem;}
+  .spot-game-header h1{font-size:1.7rem;}
+  .spot-journal-header{padding:1.35rem 1.2rem 1rem;}
+  .spot-journal--nature .spot-paper-title,
+  .spot-journal--science .spot-paper-title,
+  .spot-journal--cell .spot-paper-title,
+  .spot-journal--cell-press .spot-paper-title,
+  .spot-journal--generic .spot-paper-title{
+    font-size:1.55rem;
+  }
+  .spot-journal--nejm .spot-paper-title{font-size:1.72rem;}
+  .spot-section-rail{grid-template-columns:1fr;}
+  .spot-section-tab{
+    min-height:42px;
+    border-right:0;
+    border-bottom:1px solid #d7d7d7;
+  }
+  .spot-section-tab:last-child{border-bottom:0;}
+  .spot-passage{
+    padding:1.2rem;
+    max-height:380px;
+    font-size:.98rem;
+  }
   .spot-actions{flex-direction:column;}
   .spot-button{width:100%;}
   .spot-footer{justify-content:center;}
