@@ -33,12 +33,12 @@
     science: {
       className: 'spot-journal--science',
       wordmark: 'Science',
-      meta: (item) => `Research Article | ${item.year}`
+      meta: (item) => `REPORTS | ${item.year}`
     },
     cell: {
       className: 'spot-journal--cell',
       wordmark: 'Cell',
-      meta: (item) => `Article | ${item.year}`
+      meta: (item) => `Article`
     },
     neuron: {
       className: 'spot-journal--cell-press spot-journal--neuron',

@@ -670,8 +670,13 @@ body.research-page .hero-image {
 }
 .spot-journal-header{
   padding:2rem 2rem 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 .spot-journal-wordmark{
+  grid-column: 1;
   width:fit-content;
   min-height:40px;
   display:flex;
@@ -682,43 +687,62 @@ body.research-page .hero-image {
   margin-bottom:1.2rem;
 }
 .spot-journal-meta{
+  grid-column: 2;
   font-family:Arial, Helvetica, sans-serif;
   font-size:.78rem;
   font-weight:700;
   color:#666;
   text-transform:uppercase;
-  letter-spacing:0;
+  letter-spacing:0.05em;
   margin-bottom:.65rem;
+  text-align: right;
 }
 .spot-paper-title{
+  grid-column: 1 / span 2;
   color:#1a1a1a;
   margin:0;
   letter-spacing:0;
 }
 .spot-paper-meta{
+  grid-column: 1 / span 2;
   margin-top:.9rem;
   color:#555;
   font-family:Arial, Helvetica, sans-serif;
   font-size:.92rem;
   font-weight:700;
 }
-.spot-journal--nature .spot-journal-header,
-.spot-journal--science .spot-journal-header,
-.spot-journal--pnas .spot-journal-header{
+
+/* --- Nature Style --- */
+.spot-journal--nature .spot-journal-header{
   text-align:left;
+  border-bottom: 3px double #d3d3d3;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.8rem;
 }
 .spot-journal--nature .spot-journal-wordmark{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:2.25rem;
-  font-weight:900;
-  text-transform:lowercase;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #21437a; /* Nature Blue from image */
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.2rem;
+}
+.spot-journal--nature .spot-journal-meta{
+  grid-column: 2;
+  align-self: end;
+  color: #333;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
 }
 .spot-journal--nature .spot-paper-title{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:2rem;
-  font-weight:700;
-  line-height:1.1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 1rem;
 }
+
 .spot-journal--nature-methods .spot-journal-wordmark,
 .spot-journal--nature-methods .spot-journal-meta{
   color:#025E8D;
@@ -727,37 +751,72 @@ body.research-page .hero-image {
 .spot-journal--nature-neuroscience .spot-journal-meta{
   color:#111;
 }
+
+/* --- Science Style --- */
+.spot-journal--science .spot-journal-header{
+  text-align:left;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
 .spot-journal--science .spot-journal-wordmark{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:2.3rem;
-  font-weight:900;
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #990000; /* Science Dark Red */
+  letter-spacing: -0.02em;
+}
+.spot-journal--science .spot-journal-meta{
+  grid-column: 1 / span 2;
+  text-align: left;
+  color: #e41f25; /* Science Bright Red for 'REPORTS' */
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
 }
 .spot-journal--science .spot-paper-title{
-  font-family:var(--font-headline), Georgia, "Times New Roman", serif;
-  font-size:2.05rem;
-  font-weight:900;
-  line-height:1.1;
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
+
+/* --- Cell Style --- */
 .spot-journal--cell .spot-journal-header,
 .spot-journal--cell-press .spot-journal-header{
-  border-top:4px solid #E31B23;
-  font-family:"Avenir Next", Helvetica, Arial, sans-serif;
-  text-align:left;
+  border-top: 5px solid #5BB5D1; /* Cell Blue from image */
+  text-align: left;
+  padding-top: 1.5rem;
 }
 .spot-journal--cell .spot-journal-wordmark,
 .spot-journal--cell-press .spot-journal-wordmark{
-  font-family:"Avenir Next", Helvetica, Arial, sans-serif;
-  font-size:2.2rem;
-  font-weight:800;
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #5BB5D1;
+  margin-bottom: 1.5rem;
+}
+.spot-journal--cell .spot-journal-meta,
+.spot-journal--cell-press .spot-journal-meta{
+  color: #999;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: none;
+  align-self: flex-start;
+  margin-top: 0.5rem;
 }
 .spot-journal--cell .spot-paper-title,
 .spot-journal--cell-press .spot-paper-title{
-  font-family:"Avenir Next", Helvetica, Arial, sans-serif;
-  font-size:2.15rem;
-  font-weight:800;
-  line-height:1.05;
-  color:#222;
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #1a1a1a;
 }
+
 .spot-journal--neuron .spot-journal-header{border-top-color:#222;}
 .spot-journal--immunity .spot-journal-header{border-top-color:#005596;}
 .spot-journal--immunity .spot-journal-wordmark,
