@@ -723,7 +723,7 @@ body.research-page .hero-image {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #21437a; /* Nature Blue from image */
+  color: #1a1a1a; /* Reverted to Black */
   text-transform: uppercase;
   letter-spacing: -0.01em;
   margin-bottom: 0.2rem;
@@ -763,13 +763,13 @@ body.research-page .hero-image {
   font-family: "Merriweather", Georgia, serif;
   font-size: 2.6rem;
   font-weight: 900;
-  color: #990000; /* Science Dark Red */
+  color: #A13426; /* Science Red #A13426 */
   letter-spacing: -0.02em;
 }
 .spot-journal--science .spot-journal-meta{
   grid-column: 1 / span 2;
   text-align: left;
-  color: #e41f25; /* Science Bright Red for 'REPORTS' */
+  color: #A13426; /* Consistent with wordmark */
   border-top: 1px solid #ddd;
   padding-top: 0.5rem;
   margin-top: 0.5rem;
@@ -787,7 +787,7 @@ body.research-page .hero-image {
 /* --- Cell Style --- */
 .spot-journal--cell .spot-journal-header,
 .spot-journal--cell-press .spot-journal-header{
-  border-top: 5px solid #5BB5D1; /* Cell Blue from image */
+  border-top: 5px solid #4A90E2; /* Cell Blue #4A90E2 */
   text-align: left;
   padding-top: 1.5rem;
 }
@@ -796,7 +796,7 @@ body.research-page .hero-image {
   font-family: "Avenir Next", Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #5BB5D1;
+  color: #4A90E2; /* Cell Blue #4A90E2 */
   margin-bottom: 1.5rem;
 }
 .spot-journal--cell .spot-journal-meta,
